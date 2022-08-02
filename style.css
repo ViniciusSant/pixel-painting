@@ -1,0 +1,23 @@
+body{
+  text-align: center;
+}
+
+.color{
+  display: inline-block;
+  border: solid black 1px;
+  height: 70px;
+  width: 70px;
+}
+
+.black {
+  background-color: black;
+}
+.brown{
+  background-color: brown;
+}
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
