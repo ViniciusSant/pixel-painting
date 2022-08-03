@@ -7,7 +7,9 @@ function createPixelBoard(fatherElement) {
   pixelBoard.style.display = 'flex';
   pixelBoard.style.flexWrap = 'wrap';
   pixelBoard.style.justifyContent = 'center';
-  pixelBoard.style.margin = '20px 550px';
+  pixelBoard.style.margin = '20px auto';
+  pixelBoard.style.width = '210px';
+  pixelBoard.style.height = '210px';
 
   father.appendChild(pixelBoard);
   return pixelBoard;
@@ -27,3 +29,24 @@ function createPixels(fatherElement) {
   }
 }
 createPixels(pixelBoard);
+
+// Criar a função para Selecionar a cor da pallet
+function selectColorOnPallet() {
+  let colorSelected = document.querySelector('#color-palette');
+
+  colorSelected.addEventListener('click', function (e) {
+    let elementClicked = e.target;
+    let stylesElementClicked = window.getComputedStyle(elementClicked);
+    let color = stylesElementClicked.getPropertyValue('background-color');
+
+    /*     elementClicked.classList.toggle('selected'); */
+    console.log(typeof color);
+    return color;
+  });
+}
+
+pixelBoard.addEventListener('click', function (e) {
+  let cor = selectColorOnPallet();
+  e.target.style.backgroundColor = cor;
+  console.log(e.target.style.backgroundColor);
+});
