@@ -48,3 +48,12 @@ pixelBoard.addEventListener('click', function (event) {
   let target = event.target;
   target.style.backgroundColor = cor;
 });
+
+let bottom = document.querySelector('#clear-board');
+
+bottom.addEventListener('click', function () {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index++) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});
