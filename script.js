@@ -8,7 +8,7 @@ function createPixelBoard(fatherElement) {
   pixelBoard.style.flexWrap = 'wrap';
   pixelBoard.style.justifyContent = 'center';
   pixelBoard.style.margin = '20px auto';
-  pixelBoard.style.width = '210px';
+  pixelBoard.style.width = '220px';
   pixelBoard.style.height = '210px';
 
   father.appendChild(pixelBoard);
@@ -30,23 +30,21 @@ function createPixels(fatherElement) {
 }
 createPixels(pixelBoard);
 
-// Criar a função para Selecionar a cor da pallet
-function selectColorOnPallet() {
-  let colorSelected = document.querySelector('#color-palette');
+let palette = document.querySelector('#color-palette');
+/* palette.classList.add('frufru');
+palette.classList.add('frifri');
+palette.classList.remove('frufru'); */
 
-  colorSelected.addEventListener('click', function (e) {
-    let elementClicked = e.target;
-    let stylesElementClicked = window.getComputedStyle(elementClicked);
-    let color = stylesElementClicked.getPropertyValue('background-color');
+let colorPalette = document.querySelector('.color');
+palette.addEventListener('click', function (event) {
+  let selected = document.querySelector('.selected');
+  selected.classList.remove('selected');
+  event.target.classList.add('selected');
+  selected = event.target;
+});
 
-    /*     elementClicked.classList.toggle('selected'); */
-    console.log(typeof color);
-    return color;
-  });
-}
-
-pixelBoard.addEventListener('click', function (e) {
-  let cor = selectColorOnPallet();
-  e.target.style.backgroundColor = cor;
-  console.log(e.target.style.backgroundColor);
+pixelBoard.addEventListener('click', function (event) {
+  let cor = document.querySelector('.selected').classList[1];
+  let target = event.target;
+  target.style.backgroundColor = cor;
 });
