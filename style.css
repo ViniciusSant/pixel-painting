@@ -21,3 +21,15 @@ body{
 .green{
   background-color: green;
 }
+
+#line-input{
+  margin-top: 20px;
+}
+
+#pixel-board{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: black solid 1px;
+  padding: 0px;
+
+}

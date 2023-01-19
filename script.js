@@ -16,6 +16,7 @@ function createPixelBoard(fatherElement) {
 }
 
 let pixelBoard = createPixelBoard('main');
+let buttomVQV = document.querySelector('#generate-board');
 
 function createPixels(fatherElement) {
   for (let i = 1; i <= 25; i++) {
@@ -26,6 +27,7 @@ function createPixels(fatherElement) {
     pixel.style.width = '40px';
     pixel.style.height = '40px';
     fatherElement.appendChild(pixel);
+    return pixel;
   }
 }
 createPixels(pixelBoard);
